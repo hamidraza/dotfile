@@ -1,3 +1,4 @@
+
 set nocompatible
 filetype off
 
@@ -36,9 +37,41 @@ filetype plugin indent on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all·
+" The mapleader has to be set before vundle starts loading all 
 " the plugins.
 let mapleader=","
+
+colorscheme solarized
+let g:solarized_termcolors=16
+let g:solarized_termtrans=1
+
+set splitbelow    " Open new split panes to right and bottom, which feels more natural
+set splitright
+set tabstop=2     " Softtabs, 2 spaces
+set shiftwidth=2
+set shiftround
+set expandtab
+set nobackup
+set nowritebackup
+set noswapfile
+set history=1000
+set autoread      " automatically read feil that has been changed on disk and doesn't have changes in vim"
+set showcmd       " display incomplete commands
+set showmatch     " Show matching brackets."
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+set backspace=indent,eol,start
+set hidden
+set background=dark
+set list listchars=tab:»·,trail:·,nbsp:·     " Display extra whitespace
+set number
+set wildmenu       " visual autocomplete for command menu
+set smartcase
+set ignorecase
+set hlsearch
+set cursorline
+set visualbell t_vb=
+set clipboard=exclude:.*
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -46,33 +79,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-
-set nobackup
-set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-
-set hidden
-
-
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=16
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+noremap ; :
+noremap : ;
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -85,27 +93,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-" Numbers
-set number
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-"set wildmode=list:longest,list:full
-set wildmenu            " visual autocomplete for command menu
-
-noremap ; :
-noremap : ;
-
-set smartcase
-set ignorecase
-set hlsearch
-set cursorline
-
-set visualbell t_vb=
-set clipboard=exclude:.*
-
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -160,3 +147,4 @@ augroup FileType sh,perl
   \}
   augroup END
 "}}}
+
