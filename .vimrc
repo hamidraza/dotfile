@@ -16,14 +16,21 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'valloric/youcompleteme'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'rking/ag.vim'
-Plugin 'othree/html5.vim'
-Plugin 'elzr/vim-json'
-"Plugin 'shougo/neocomplete.vim'
-Plugin 'yggdroot/indentline'
-"Plugin 'junegunn/vim-easy-align'
+"Plugin 'othree/html5.vim'
+"Plugin 'elzr/vim-json'
+Plugin 'shougo/neocomplete.vim'
+"Plugin 'yggdroot/indentline'
+Plugin 'junegunn/vim-easy-align'
 "Plugin 'Chiel92/vim-autoformat'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'mxw/vim-jsx'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'ekalinin/dockerfile.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -51,11 +58,13 @@ set expandtab
 
 set nobackup
 set nowritebackup
-set noswapfile
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
+
+set hidden
 
 
 set background=dark
@@ -120,8 +129,34 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-let g:indentLine_char = ':'
-
 " NERDTree toggle
 noremap <leader>t :NERDTreeToggle<CR>
 
+"let g:indentLine_char = ':'
+"let g:indentLine_color_term = 239
+
+"---- Easy Align ---- {{{
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+augroup FileType sh,perl
+  let g:easy_align_delimiters = {
+      \ 's': {
+      \     'pattern':       '\$',
+      \     'ignore_groups': ['Comment'],
+      \     'left_margin':   0,
+      \     'right_margin':  0,
+      \     'indentation':   'shallow',
+      \     'stick_to_left': 0
+      \     },
+      \ '=': {
+      \     'pattern':       '=',
+      \     'ignore_groups': ['Comment'],
+      \     'left_margin':   0,
+      \     'right_margin':  0,
+      \     'indentation':   'deep',
+      \     'stick_to_left': 0
+      \     }
+  \}
+  augroup END
+"}}}
