@@ -30,7 +30,8 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mxw/vim-jsx'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'mhinz/vim-startify'
+Plugin 'groenewege/vim-less'
+"Plugin 'mhinz/vim-startify'
 Plugin 'ekalinin/dockerfile.vim'
 call vundle#end()
 filetype plugin indent on
