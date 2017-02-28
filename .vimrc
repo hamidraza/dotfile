@@ -15,13 +15,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'easymotion/vim-easymotion'
 Plugin 'rking/ag.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'maksimr/vim-jsbeautify'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'groenewege/vim-less'
 Plugin 'moll/vim-node'
 Plugin 'sheerun/vim-polyglot'
 Bundle 'marijnh/tern_for_vim'
@@ -30,6 +27,8 @@ Plugin 'vim-syntastic/syntastic'
 "Plugin 'ryanoasis/vim-devicons'
 "Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'flowtype/vim-flow'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 filetype plugin indent on
@@ -63,6 +62,8 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
 "set visualbell
 set noerrorbells
+
+set relativenumber
 
 set nobackup
 set noswapfile
@@ -99,4 +100,3 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 autocmd BufEnter *.png,*.jpg,*.jpeg,*gif,*.ico exec "! ~/.iterm2/imgcat ".expand("%") | :bw
 
 let g:flow#autoclose = 1
-
