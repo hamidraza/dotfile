@@ -16,3 +16,13 @@ alias mkdir='mkdir -pv'
 alias wget='wget -c'
 
 export CLICOLOR=1
+
+## GIT ##
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias go='git checkout '
+alias gk='gitk --all&'
+alias gx='gitx --all'
