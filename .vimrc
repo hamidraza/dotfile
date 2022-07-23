@@ -11,32 +11,18 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'easymotion/vim-easymotion'
 Plugin 'rking/ag.vim'
 Plugin 'valloric/youcompleteme'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'moll/vim-node'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'posva/vim-vue'
-Plugin 'vim-syntastic/syntastic'
-"Plugin 'ryanoasis/vim-devicons'
-"Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'flowtype/vim-flow'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 filetype plugin indent on
 
 syntax enable
 set background=dark
-"let g:solarized_termcolors=256
-colorscheme solarized
 
 set hidden
 set nowrap
@@ -100,3 +86,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 autocmd BufEnter *.png,*.jpg,*.jpeg,*gif,*.ico exec "! ~/.iterm2/imgcat ".expand("%") | :bw
 
 let g:flow#autoclose = 1
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+endif
